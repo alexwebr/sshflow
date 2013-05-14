@@ -30,7 +30,7 @@ class HandshakeScanner:
         index_tuple =   ip.dst, tcp.dport, ip.src, tcp.sport
         reverse_tuple = ip.src, tcp.sport, ip.dst, tcp.dport
         # If we see evidence of an SSH handshake
-        if re.search('SSH-2.0-', str(tcp.data)):
+        if re.search('^SSH-2.0-', str(tcp.data)):
             # If this is the first SSH packet we have seen (from this pair of hosts+ports),
             # this will be the server sending its version number to the client (tcp connection
             # is already established at this point)
