@@ -25,7 +25,7 @@ except IOError:
 try:
     pcap = dpkt.pcap.Reader(f)
 except ValueError:
-    print "error: file couldn't be parsed by dpkt. note that pcap-ng files from wireshark are not supported by dpkt."
+    print "error: file couldn't be parsed by dpkt. if exporting from wireshark, use 'Wireshark/tcpdump/... - libpcap' file type"
     exit(1)
 
 
