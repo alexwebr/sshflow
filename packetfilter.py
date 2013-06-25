@@ -5,7 +5,9 @@ class PacketFilter:
     def __init__(self):
         # This will become a dictionary indexed by
         # (caddr, cport, saddr, sport) tuples with
-        # keys that are Conversation objects
+        # values that are Conversation objects.
+        # We use this dictionary to look up the converations that
+        # packets belong to.
         self.conversations = {}
 
     def addConversation(self, c):
